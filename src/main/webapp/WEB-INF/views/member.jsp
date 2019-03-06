@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,11 +8,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<strong>Welcom File index.jsp</strong>
+
+<c:forEach var="result" items="${list }" >
 <div>
-        <form action="/member.bgn" method="post">
-            <button onclick="submit">처음 만든 버튼</button>
-        </form>
-    </div>
+이름: ${result.name }
+</div>
+
+</c:forEach>
+
 </body>
 </html>

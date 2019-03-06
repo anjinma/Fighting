@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.first.begin.domain.Board;
@@ -16,7 +17,7 @@ public class BoardController {
 	private BoardService boardService;
 	
 	@RequestMapping("/list.bgn")
-	public String listboard() {
+	public String listboard(Model model) {
 		
 		List<Board> s = boardService.getList();
 		
@@ -24,6 +25,8 @@ public class BoardController {
 			System.out.println(t.getBno()+" / "+t.getTitle()+" / "+t.getContent()+" / "+t.getWriter());
 		}
 		
-		return "sample";
+		model.addAttribute("list",boardService.getList());
+		
+		return "list";
 	}
 }
