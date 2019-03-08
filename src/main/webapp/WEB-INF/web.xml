@@ -18,15 +18,19 @@
 	    <filter-name>encodingFilter</filter-name>
 	    <url-pattern>/*</url-pattern>
 	</filter-mapping>
-    
+	
+    <error-page><!-- 정확히 알아보자! -->
+        <error-code>404</error-code>
+        <location>/views/error/404.jsp</location>
+    </error-page>
 
 	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
-	<context-param>
+	<context-param><!-- web.xml의 전역변수 같은 느낌으로 보자! -->
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/spring/root-context.xml</param-value>
 	</context-param>
 	
-	<!-- Creates the Spring Container shared by all Servlets and Filters -->
+	<!-- spring에서 contextConfigLocation을 설정하기 위한 listener bean 지정 -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
@@ -44,7 +48,7 @@
 		
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
-		<url-pattern>*.bgn</url-pattern>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
 </web-app>

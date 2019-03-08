@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>
-    Begin Project!  
-</h1>
-<P>  "처음 만든 버튼"을 누르셨습니다! </P>
+<h1>404 ERROR!!</h1>
 </body>
 </html>
